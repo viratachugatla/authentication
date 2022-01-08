@@ -7,7 +7,7 @@ module.exports = function(req, res, next) {
   try {
     const verified = jwt.verify(token, "viratsecret");
     req.user = verified;
-    next()
+    next();
   } catch (err) {
     res.status(400).send("Invalid token");
   }

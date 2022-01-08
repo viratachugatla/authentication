@@ -50,8 +50,6 @@ router.post("/login", async (req, res) => {
   // create and assign a token
   const token = jwt.sign({ _id: user._id }, "viratsecret");
   res.header("auth-token", token).send(token);
-
-  res.send("Logged innnnnn");
 });
 
 module.exports = router;
